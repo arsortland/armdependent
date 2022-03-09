@@ -3,7 +3,7 @@
 # $credentials = Get-Credential
 # Connect-AzAccount -ServicePrincipal -Credential $credentials -TenantId $tenantid -Environment AzureCloud -SubscriptionId $subscriptionsid
 
-$rg  ="iac-cond-drey-01"
+$rg  ="iac-cond-drey-03"
 New-AzResourceGroup -Name $rg -Location "West Europe" -Force
 
 New-AzResourceGroupDeployment `
@@ -13,7 +13,7 @@ New-AzResourceGroupDeployment `
 
 
     # Remove-AzResourceGroup -Name $rg -Force:$true
-    # Remove-AzResourceGroup -Name iac-demo-cond-drey-01 -Force:$true
-    # Remove-AzResourceGroup -Name iac-demo-cond-drey-02 -Force:$true
+    # Remove-AzResourceGroup -Name iac-cond-drey-01 -Force:$true
+    # Remove-AzResourceGroup -Name iac-cond-drey-02 -Force:$true
     # Remove-AzResourceGroup -Name iac-cond-drey -Force:$true
-    # Remove-AzResourceGroup -Name iac-demo-cond-drey-03 -Force:$true
+    # Remove-AzResourceGroup -Name iac-cond-drey-03 -Force:$true

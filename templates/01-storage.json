@@ -2,20 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "storageAccName": {
-            "type": "string",
-            "defaultValue": "storagedreytest090401"
+        "storageAccountName": {
+            "type": "string"
         }
     },
     "variables": {
-        "storageAccName": "[if(not(empty(parameters('storageAccName'))),parameters('storageAccName'),'storagedreytest0904')]"
+        "storageAccountName": "[if(not(empty(parameters('storageAccountName'))), parameters('storageAccountName'), 'storage')]"
     },
     "resources": [
         {
-            "condition": "[not(empty(parameters('storageAccName')))]",
-            "name": "[variables('storageAccName')]",
+            "condition": "[not(empty(parameters('storageAccountName')))]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2019-06-01",
+            "name": "[variables('storageAccountName')]",
             "location": "[resourceGroup().location]",
             "kind": "StorageV2",
             "sku": {
@@ -23,5 +22,6 @@
             }
         }
     ],
-    "outputs": {}
+    "outputs": {},
+    "functions": []
 }
