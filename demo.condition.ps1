@@ -3,13 +3,14 @@
 # $credentials = Get-Credential
 # Connect-AzAccount -ServicePrincipal -Credential $credentials -TenantId $tenantid -Environment AzureCloud -SubscriptionId $subscriptionsid
 
-$rg  ="iac-cond-drey-03"
+$rg  ="iac-cond-drey-08"
 New-AzResourceGroup -Name $rg -Location "West Europe" -Force
 
 New-AzResourceGroupDeployment `
     -Name "new-iac-cond-demo" `
     -ResourceGroupName $rg `
-    -TemplateFile '.\demo-condition.json'
+    -TemplateFile '.\demo-condition-sql.json' `
+    -allowAzureIPs 'Yes'
 
 
     # Remove-AzResourceGroup -Name $rg -Force:$true

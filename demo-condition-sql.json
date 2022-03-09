@@ -11,11 +11,11 @@
         },
         "adminLogin": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "sysadmindrey0903"
         },
         "adminPassword": {
             "type": "securestring",
-            "defaultValue": ""
+            "defaultValue": "Cyk@Blyat2319"
         }
     },
     "variables": {
