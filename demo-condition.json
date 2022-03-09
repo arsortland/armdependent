@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccName": {
+            "type": "string",
+            "defaultValue": ""
+        }
+    },
+    "variables": {
+        "storageAccName": "[if(not(empty(parameters('storageAccName'))),parameters('storageAccName'),'storagedreytest0904')]"
+    },
+    "resources": [
+        {
+            "condition": "[not(empty(parameters('storageAccName')))]",
+            "name": "[variables('storageAccName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "[resourceGroup().location]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Standard_LRS"
+            }
+        }
+    ],
+    "outputs": {}
+}
