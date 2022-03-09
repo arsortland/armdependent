@@ -3,7 +3,7 @@
 # $credentials = Get-Credential
 # Connect-AzAccount -ServicePrincipal -Credential $credentials -TenantId $tenantid -Environment AzureCloud -SubscriptionId $subscriptionsid
 
-$rg  ="iac-cond-drey"
+$rg  ="iac-cond-drey-01"
 New-AzResourceGroup -Name $rg -Location "West Europe" -Force
 
 New-AzResourceGroupDeployment `
